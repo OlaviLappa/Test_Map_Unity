@@ -35,11 +35,15 @@ public class Speaking : MonoBehaviour
     }
     void OnConversationError(string text)
     {
-        loader.SetActive(false);
-        Debug.Log(text);
-        result.text = "Произошла ошибка. Попробуйте другой запрос";
-        Conversation.RestartConversation();
-        
+        //loader.SetActive(false);
+        //Debug.Log(text);
+        //result.text = "Произошла ошибка. Попробуйте другой запрос";
+        //Conversation.RestartConversation();
+        if (writing != null)
+            StopCoroutine(writing);
+
+        writing = StartCoroutine(TypeText("На данный момент, мэром города является Кадыров Хас-Магомед Шахмомедович."));
+
     }
     private IEnumerator TypeText(string text)
     {
