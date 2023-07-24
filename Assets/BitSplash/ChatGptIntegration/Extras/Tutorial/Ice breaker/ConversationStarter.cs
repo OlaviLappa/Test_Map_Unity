@@ -18,8 +18,8 @@ namespace BitSplash.AI.GPT.Extras
                 .MaximumLength(2048); // set the maximum length of tokens per request
 
             //call Conversation.Say to say something. Make sure not to call it again until you get a response or error
-            Conversation.Say("who are you?");
-            Answer.text += "Me: who are you?\r\n";
+            Conversation.Say("Сколько людей проживает в грозном?");
+            Answer.text += "Я: Сколько людей проживает в грозном?\r\n";
         }
 
         /// <summary>
