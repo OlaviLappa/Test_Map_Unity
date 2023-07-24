@@ -53,4 +53,26 @@ public class Speaking : MonoBehaviour
         }
         writing = null;
     }
+
+    public void FakeLoad()
+    {
+        if (buildings.activeSelf == false)
+        {
+            StartCoroutine(Loa());
+        }
+        else
+        {
+            buildings.SetActive(false);
+        }
+    }
+    public GameObject load;
+    public GameObject buildings;
+    private IEnumerator Loa()
+    {
+        buildings.SetActive(false);
+        load.SetActive(true);
+        yield return new WaitForSeconds(5);
+        load.SetActive(false);
+        buildings.SetActive(true);
+    }
 }
